@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.18",
     "@types/jsonwebtoken": "^9.0.5",
     "cloudinary": "^1.41.3",
+    "grafbase": "^0.24.1",
     "graphql-request": "^6.1.0",
     "jsonwebtoken": "^9.0.2",
     "next": "14.1.0",
@@ -20,7 +21,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@grafbase/sdk": "^0.16.0",
+    "@grafbase/sdk": "^0.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
