@@ -11,10 +11,13 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@types/jsonwebtoken": "^9.0.5",
+    "@types/mongoose": "^5.11.97",
     "cloudinary": "^1.41.3",
     "grafbase": "^0.24.1",
     "graphql-request": "^6.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.1",
     "next": "14.1.0",
     "next-auth": "^4.24.5",
     "react": "^18",
