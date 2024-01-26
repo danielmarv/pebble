@@ -25,14 +25,14 @@ export const uploadImage = async (imagePath: string) => {
   }
 };
 
-export const createProject = async () => {
+export const createNewProject = async (form:ProjectForm, creatorId:string,) => {
   try {
     const token = await fetchToken();
     const response = await fetch(`${serverUrl}/api/createProject`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        // Authorization: `Bearer ${token}`,
       },
     });
     return response.json();
@@ -40,4 +40,23 @@ export const createProject = async () => {
     throw err;
   }
 }
+
+export const updateProject = async (form: ProjectForm, projectId: string) => {
+  try {
+    const token = await fetchToken();
+    const response = await fetch(`${serverUrl}/api/updateProject/${projectId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(form),
+    });
+    return response.json();
+  } catch (err) {
+    throw err;
+  }
+}
+
+
 

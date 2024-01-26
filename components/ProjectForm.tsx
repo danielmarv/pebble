@@ -63,17 +63,17 @@ const ProjectForm = ({ type, session, project }: Props) => {
 
         setSubmitting(true)
 
-        const { token } = await fetchToken()
+        // const { token } = await fetchToken()
 
         try {
             if (type === "create") {
-                await createNewProject(form, session?.user?.id, token)
+                await createNewProject(form, session?.user?.id)
 
                 router.push("/")
             }
             
             if (type === "edit") {
-                await updateProject(form, project?.id as string, token)
+                await updateProject(form, project?.id as string)
 
                 router.push("/")
             }
