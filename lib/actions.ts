@@ -58,5 +58,28 @@ export const updateProject = async (form: ProjectForm, projectId: string) => {
   }
 }
 
+export const deleteProject = async (projectId: string) => {
+  try {
+    // const token = await fetchToken();
+    const response = await fetch(`${serverUrl}/api/deleteProject/${projectId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        // Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.json();
+  } catch (err) {
+    throw err;
+  }
+}
 
+export const getProject = async (projectId: string) => {
+  try {
+    const response = await fetch(`${serverUrl}/api/getProject/${projectId}`);
+    return response.json();
+  } catch (err) {
+    throw err;
+  }
+}
 
