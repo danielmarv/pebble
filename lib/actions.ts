@@ -61,7 +61,7 @@ export const updateProject = async (form: ProjectForm, projectId: string) => {
 export const deleteProject = async (projectId: string) => {
   try {
     // const token = await fetchToken();
-    const response = await fetch(`${serverUrl}/api/deleteProject/${projectId}`, {
+    const response = await fetch(`${serverUrl}/api/createProject/${projectId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -77,6 +77,34 @@ export const deleteProject = async (projectId: string) => {
 export const getProject = async (projectId: string) => {
   try {
     const response = await fetch(`${serverUrl}/api/getProject/${projectId}`);
+    return response.json();
+  } catch (err) {
+    throw err;
+  }
+}
+
+export const createUser = async (name: string, email: string, image: string) => {
+  try {
+    const response = await fetch(`${serverUrl}/api/createUser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        image,
+      }),
+    });
+    return response.json();
+  } catch (err) {
+    throw err;
+  }
+}
+
+export const getUser = async (email: string) => {
+  try {
+    const response = await fetch(`${serverUrl}/api/getUser/${email}`);
     return response.json();
   } catch (err) {
     throw err;
