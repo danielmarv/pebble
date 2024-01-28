@@ -111,3 +111,12 @@ export const getUser = async (email: string) => {
   }
 }
 
+export const fetchAllProjects = async (category: string, endcursor: string) => {
+  try {
+    const response = await fetch(`${serverUrl}/api/projects?category=${category}&endcursor=${endcursor}`);
+    return JSON.stringify(response.json());
+  } catch (err) {
+    throw err;
+  }
+}
+
